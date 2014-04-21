@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+    <classpath refid="maven.plugin.classpath"/>
+  </taskdef>
+  <echo message="Starting wsimport"/>
+  <wsimport wsdl="src/main/resources/eBaySvc.wsdl" verbose="true" target="2.1" xnocompile="true" package="com.ebay.soap.eBLBaseComponents" debug="false" quiet="true" sourcedestdir="src/main/java">
+    <binding dir="/home/mamtha/Documents/workspace/ebaysdkcore" includes="custom-binding.xml,jaxb-binding.xjb"/>
+  </wsimport>
+</target>
+</project>
